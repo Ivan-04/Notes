@@ -9,6 +9,7 @@ import com.example.notes.models.dtos.UserOutput;
 import com.example.notes.models.dtos.UserOutputId;
 import com.example.notes.models.dtos.UserUpdate;
 import com.example.notes.repositories.UserRepository;
+import com.example.notes.services.contracts.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;

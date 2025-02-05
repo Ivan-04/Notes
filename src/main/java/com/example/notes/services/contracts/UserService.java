@@ -1,4 +1,4 @@
-package com.example.notes.services;
+package com.example.notes.services.contracts;
 
 import com.example.notes.models.User;
 import com.example.notes.models.dtos.Register;

@@ -6,7 +6,7 @@ import com.example.notes.models.dtos.Register;
 import com.example.notes.models.dtos.UserOutput;
 import com.example.notes.models.dtos.UserOutputId;
 import com.example.notes.models.dtos.UserUpdate;
-import com.example.notes.services.UserService;
+import com.example.notes.services.contracts.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;

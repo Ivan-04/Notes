@@ -1,6 +1,7 @@
 package com.example.notes.models;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,4 +25,13 @@ public class Note {
 
     @Column(name = "content")
     private String content;
+
+
+    @Builder
+    public Note(String title,
+                String content, User user) {
+        this.title = title;
+        this.content = content;
+        this.user = user;
+    }
 }

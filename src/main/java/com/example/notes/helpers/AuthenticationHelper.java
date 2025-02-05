@@ -3,7 +3,7 @@ package com.example.notes.helpers;
 import com.example.notes.exceptions.AuthenticationFailureException;
 import com.example.notes.exceptions.AuthorizationException;
 import com.example.notes.models.User;
-import com.example.notes.services.UserService;
+import com.example.notes.services.contracts.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
