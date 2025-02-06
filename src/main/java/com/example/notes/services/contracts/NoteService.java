@@ -18,6 +18,8 @@ public interface NoteService {
 
     List<NoteOutput> findAllNotesOfUser(User user);
 
+    List<Note> findAllNotesEntitiesOfUser(User user);
+
     NoteOutputId createNote(NoteInput noteInput, User user);
 
     NoteOutput editNote(User user, Note note, NoteUpdate noteUpdate);

@@ -1,11 +1,10 @@
-package com.example.notes.controllers;
+package com.example.notes.controllers.rest;
 
 import com.example.notes.helpers.AuthenticationHelper;
 import com.example.notes.models.Note;
 import com.example.notes.models.User;
 import com.example.notes.models.dtos.*;
 import com.example.notes.services.contracts.NoteService;
-import com.example.notes.services.contracts.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;

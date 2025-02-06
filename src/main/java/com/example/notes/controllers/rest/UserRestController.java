@@ -1,4 +1,4 @@
-package com.example.notes.controllers;
+package com.example.notes.controllers.rest;
 
 import com.example.notes.helpers.AuthenticationHelper;
 import com.example.notes.models.User;

@@ -59,6 +59,12 @@ public class NoteServiceImpl implements NoteService {
     }
 
     @Override
+    public List<Note> findAllNotesEntitiesOfUser(User user){
+
+        return noteRepository.findAllByUser(user);
+    }
+
+    @Override
     public NoteOutputId createNote(NoteInput noteInput, User user){
 
         Note note = Note.builder()

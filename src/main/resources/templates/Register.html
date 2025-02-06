@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/Register.css">
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="navigation">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" th:href="@{/}">Home</a></li>
+                <li><a href="#" th:href="@{/auth/login}">Login</a> </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="register-container">
+        <form action="#" th:action="@{/auth/register}" th:object="${register}" method="post"
+              enctype="multipart/form-data" class="register-form">
+
+            <label th:text="#{user.label.email}">Email</label>
+            <label>
+                <input type="email" th:field="*{email}" placeholder="Enter your email"/>
+            </label>
+            <label class="error" th:errors="*{email}">Email error placeholder</label>
+
+            <label th:text="#{user.label.password}">Password</label>
+            <label>
+                <input type="password" th:field="*{password}" placeholder="Enter your password"/>
+            </label>
+            <label class="error" th:errors="*{password}">Password error placeholder</label>
+
+            <label th:text="#{user.label.passwordConfirm}">Confirm Password</label>
+            <label>
+                <input type="password" th:field="*{passwordConfirm}" placeholder="Confirm your password"/>
+            </label>
+            <label class="error" th:errors="*{passwordConfirm}">Confirm Password error placeholder</label>
+
+            <label th:text="#{user.label.firstName}">First Name</label>
+            <label>
+                <input type="text" th:field="*{firstName}" placeholder="Enter your first name"/>
+            </label>
+            <label class="error" th:errors="*{firstName}">First Name error placeholder</label>
+
+            <label th:text="#{user.label.lastName}">Last Name</label>
+            <label>
+                <input type="text" th:field="*{lastName}" placeholder="Enter your last name"/>
+            </label>
+            <label class="error" th:errors="*{lastName}">Last Name error placeholder</label>
+
+            <input type="submit" value="Register" class="register-btn"/>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <small th:text="${'© Copyright ' + #dates.year(#dates.createNow()) + ' Notes'}">© 2025 Notes</small>
+    </div>
+</footer>
+
+</body>
+</html>

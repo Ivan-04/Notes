@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/NoteView.css">
+
+</head>
+<body>
+
+<div class="navigation">
+    <h3>
+        <a href="#" th:href="@{/}">Home</a>
+        <a href="#" th:if="${isAuthenticated}" th:href="@{/notes/my}">My Notes</a>
+        <a href="#" th:unless="${isAuthenticated}" th:href="@{/auth/login}">Login</a>
+        <a href="#" th:unless="${isAuthenticated}" th:href="@{/auth/register}">Register</a>
+        <a href="#" th:if="${isAuthenticated}" th:href="@{/notes/new}">Create
+            Post</a>
+        <a href="#" th:if="${isAuthenticated}" th:href="@{/users/me}">My Profile</a>
+        <a href="#" th:if="${isAuthenticated}" th:href="@{/auth/logout}">Logout</a>
+    </h3>
+</div>
+
+<div class="header">
+    <h2 th:text="${note.title}">Note Title</h2>
+</div>
+<div class="post-info">
+    <p th:text="${note.content}">Note content goes here...</p>
+</div>
+
+
+<div class="button-container">
+    <form th:action="@{/notes/{id}/edit(id=${note.id})}" method="get">
+        <button type="submit" class="edit">Edit Note</button>
+    </form>
+
+    <form th:action="@{/notes/{id}/delete(id=${note.id})}" method="post">
+        <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this note?')">
+            Delete Note
+        </button>
+    </form>
+</div>
+
+<footer>
+    <small th:text="${'© Copyright ' + #dates.year(#dates.createNow()) + ' Notes'}">Notes</small>
+</footer>
+
+</body>
+</html>

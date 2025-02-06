@@ -9,6 +9,10 @@ import com.example.notes.models.dtos.UserUpdate;
 public interface UserService {
     UserOutput findUserById(int id);
 
+    User findUserEntityById(int id);
+
+    boolean existsByEmail(String email);
+
     UserOutput findUserByEmail(String email);
 
     User findUserEntityByEmail(String email);

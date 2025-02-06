@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note View</title>
+    <link rel="stylesheet" href="/css/NoteUpdateView.css">
+
+</head>
+<body>
+<div class="navigation">
+    <h3>
+        <a href="#" th:href="@{/}" >Home</a>
+    </h3>
+</div>
+<div class="body-content">
+    <header class="header">
+        <h2 th:text="#{subtitle2}">Edit Note</h2>
+    </header>
+
+    <div class="post-form">
+        <form action="#" th:action="@{/notes/{id}/edit(id=${id})}" th:object="${note}" method="post">
+            <label th:text="#{note.label.title}">Title</label>
+            <input type="text" th:field="*{title}" placeholder="Enter note title"/>
+            <label class="error" th:errors="*{title}">Title error placeholder</label>
+
+            <label th:text="#{note.label.content}">Content</label>
+            <input type="text" th:field="*{content}" placeholder="Enter note content"/>
+            <label class="error" th:errors="*{content}">Content error placeholder</label>
+
+            <input type="submit" value="Save"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
